@@ -1,6 +1,9 @@
 import { useState, useRef } from "react"
 
 import { useIntersectionObserver } from "../hooks"
+import CloseFillIcon from "../icons/CloseFill"
+import InfoIcon from "../icons/Info"
+
 import BreedImage from "./BreedImage"
 
 function Breed({ value }) {
@@ -18,6 +21,8 @@ function Breed({ value }) {
     }
   })
 
+  const [toggled, setToggled] = useState(false)
+
   return (
     <div ref={ref} className="Breed">
       <h5>{breed}</h5>
@@ -25,12 +30,16 @@ function Breed({ value }) {
 
       {visible && <BreedImage name={breed} />}
 
-      <div className="more">
-        <ul>
-          <li>{origin || "-"}</li>
-          <li>{coat || "-"}</li>
-          <li>{pattern || "-"}</li>
-        </ul>
+      <ul className={`BreedInfo ${toggled ? "visible" : "hidden"}`}>
+        <li><span>Origin:</span>{origin || "-"}</li>
+        <li><span>Coat:</span>{coat || "-"}</li>
+        <li><span>Pattern:</span>{pattern || "-"}</li>
+      </ul>
+
+      <div className="BreedAction">
+        <button onClick={() => setToggled((prev) => !prev)}>
+          {toggled ? <CloseFillIcon /> : <InfoIcon />}
+        </button>
       </div>
     </div>
   )
