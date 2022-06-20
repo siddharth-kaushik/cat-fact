@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from "react"
 
 import { useBreeds } from "./hooks"
-import { Breeds } from "./components"
+import { Breeds, Fact } from "./components"
 
 import "./App.css"
 
@@ -16,7 +16,6 @@ function App() {
       const windowHeight = window.innerHeight
 
       const reachingEnd = scrollTop + windowHeight + buffer > scrollHeight
-      console.log("end", reachingEnd, hasMore)
 
       if (reachingEnd && !loading && hasMore) {
         setPage((prev) => prev + 1)
@@ -33,6 +32,7 @@ function App() {
   return (
     <div className="App">
       <h1>The Cat Fact App</h1>
+      <Fact />
       <Breeds list={breeds} />
       {error && <div>error loading breeds: {error.message}</div>}
       {loading && <div>Loading...</div>}
