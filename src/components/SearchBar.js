@@ -1,14 +1,18 @@
 import React from "react"
+import { useCatState, useCatDispatch } from "../context"
 
-function SearchBar({ value, onChange }) {
+function SearchBar() {
+  const dispatch = useCatDispatch()
+  const { search } = useCatState()
+
   const handleChange = () => (e) => {
-    onChange(e.target.value)
+    dispatch({ type: "search", payload: e.target.value })
   }
 
   return (
     <input
       type="text"
-      value={value}
+      value={search}
       placeholder="search"
       onChange={handleChange()}
     />

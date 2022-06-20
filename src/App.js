@@ -2,14 +2,15 @@ import { useState, useCallback, useEffect } from "react"
 
 import { useBreeds, useFact } from "./hooks"
 import { Breeds, Fact, SearchBar } from "./components"
+import { useCatState } from "./context"
 
 import "./App.css"
 
 function App() {
   useFact()
+  const { search } = useCatState()
 
   const [page, setPage] = useState(1)
-  const [search, setSearch] = useState("")
 
   const [breeds, error, loading, hasMore] = useBreeds(page)
   const [filtered, setFiltered] = useState([])
@@ -54,7 +55,7 @@ function App() {
     <div className="App">
       <h1>The Cat Fact App</h1>
       <Fact />
-      <SearchBar value={search} onChange={(v) => setSearch(v)} />
+      <SearchBar />
       <h3>{stat}</h3>
       <Breeds list={filtered} error={error} loading={loading} />
       {!hasMore && <div>No more breeds...</div>}
