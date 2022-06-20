@@ -8,7 +8,6 @@ function BreedImage({ name }) {
   return (
     <div className="BreedImage">
       <img
-        className="image"
         src={imgSrc}
         alt={altText}
         loading="lazy"

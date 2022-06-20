@@ -15,7 +15,7 @@
 }
 
 .BreedImage,
-.BreedImage .image {
+.BreedImage img {
   max-width: 240px;
   aspect-ratio: 1 / 1;
   transition: opacity 300ms ease-in 0ms;
