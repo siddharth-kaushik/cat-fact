@@ -1,4 +1,6 @@
-function Logo({ color = "#f5f5f5", size = 121 }) {
+import React from "react"
+
+const Logo = ({ color = "#f5f5f5", size = 121 }) => {
   return (
     <div>
       <svg
@@ -15,4 +17,4 @@ function Logo({ color = "#f5f5f5", size = 121 }) {
   )
 }
 
-export default Logo
+export default React.memo(Logo)
