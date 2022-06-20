@@ -1,13 +1,29 @@
 import { useState, useCallback, useEffect } from "react"
 
 import { useBreeds } from "./hooks"
-import { Breeds, Fact } from "./components"
+import { Breeds, Fact, SearchBar } from "./components"
 
 import "./App.css"
 
 function App() {
   const [page, setPage] = useState(1)
+  const [search, setSearch] = useState("")
   const [breeds, error, loading, hasMore] = useBreeds(page)
+  const [filtered, setFiltered] = useState([])
+
+  useEffect(() => {
+    if (!search) setFiltered(breeds)
+
+    const text = search.toLowerCase()
+    const list = breeds.filter((item) => {
+      const breedMatches = item.breed.toLowerCase().includes(text)
+      const patternMatches = item.pattern.toLowerCase().includes(text)
+
+      return breedMatches || patternMatches
+    })
+
+    setFiltered(list)
+  }, [breeds, search])
 
   const onScroll = useCallback(
     (e) => {
@@ -33,10 +49,11 @@ function App() {
     <div className="App">
       <h1>The Cat Fact App</h1>
       <Fact />
-      <Breeds list={breeds} />
-      {error && <div>error loading breeds: {error.message}</div>}
-      {loading && <div>Loading...</div>}
-      {!hasMore && <div>No more breeds...</div>}
+      <SearchBar value={search} onChange={(v) => setSearch(v)} />
+      <h3>
+        {filtered.length} / {breeds.length}
+      </h3>
+      <Breeds list={filtered} error={error} loading={loading} />
     </div>
   )
 }
