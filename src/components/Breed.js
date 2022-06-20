@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import React, { useState, useRef } from "react"
 
 import { useIntersectionObserver } from "../hooks"
 import CloseFillIcon from "../icons/CloseFill"
@@ -31,9 +31,18 @@ function Breed({ value }) {
       {visible && <BreedImage name={breed} />}
 
       <ul className={`BreedInfo ${toggled ? "visible" : "hidden"}`}>
-        <li><span>Origin:</span>{origin || "-"}</li>
-        <li><span>Coat:</span>{coat || "-"}</li>
-        <li><span>Pattern:</span>{pattern || "-"}</li>
+        <li>
+          <span>Origin:</span>
+          {origin || "-"}
+        </li>
+        <li>
+          <span>Coat:</span>
+          {coat || "-"}
+        </li>
+        <li>
+          <span>Pattern:</span>
+          {pattern || "-"}
+        </li>
       </ul>
 
       <div className="BreedAction">
@@ -45,4 +54,4 @@ function Breed({ value }) {
   )
 }
 
-export default Breed
+export default React.memo(Breed)

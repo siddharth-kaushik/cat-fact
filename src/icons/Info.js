@@ -1,6 +1,6 @@
 import React from "react"
 
-function Info({ color = "currentColor", ...props }) {
+const Info = ({ color = "currentColor", ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,4 +16,4 @@ function Info({ color = "currentColor", ...props }) {
   )
 }
 
-export default Info
+export default React.memo(Info)

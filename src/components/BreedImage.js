@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 
 function BreedImage({ name }) {
   const [loaded, setLoaded] = useState(false)
@@ -19,4 +19,4 @@ function BreedImage({ name }) {
   )
 }
 
-export default BreedImage
+export default React.memo(BreedImage)

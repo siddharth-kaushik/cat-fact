@@ -1,3 +1,4 @@
+import React from 'react'
 import { useFact } from "../hooks"
 
 function Fact() {
@@ -10,4 +11,4 @@ function Fact() {
   return <p>{fact}</p>
 }
 
-export default Fact
+export default React.memo(Fact)
