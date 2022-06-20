@@ -4,8 +4,8 @@ function Breeds({ list, error, loading }) {
   return (
     <>
       <div className="Breeds">
-        {list.map((item, index) => (
-          <Breed key={index} value={item} />
+        {list.map((item) => (
+          <Breed key={item.breed} value={item} />
         ))}
       </div>
       {loading && "Loading..."}
