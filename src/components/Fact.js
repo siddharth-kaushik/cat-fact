@@ -1,12 +1,13 @@
-import React from 'react'
-import { useFact } from "../hooks"
+import React from "react"
+
+import { useCatState } from "../context"
 
 function Fact() {
-  const [fact, error, loading] = useFact()
+  const { fact, factLoading, factError } = useCatState()
 
-  if (error) return "problem fetching cat fact"
+  if (factError) return "problem fetching cat fact"
 
-  if (loading) return "loading..."
+  if (factLoading) return "loading..."
 
   return <p>{fact}</p>
 }

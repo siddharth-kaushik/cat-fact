@@ -1,11 +1,13 @@
 import { useState, useCallback, useEffect } from "react"
 
-import { useBreeds } from "./hooks"
+import { useBreeds, useFact } from "./hooks"
 import { Breeds, Fact, SearchBar } from "./components"
 
 import "./App.css"
 
 function App() {
+  useFact()
+
   const [page, setPage] = useState(1)
   const [search, setSearch] = useState("")
 

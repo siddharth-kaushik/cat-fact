@@ -1,27 +1,25 @@
 import React from "react"
 
+import { useCatDispatch } from "../context"
+
 const endpoint = "https://catfact.ninja/fact"
 
 function useFact() {
-  const [fact, setFact] = React.useState(null)
-  const [error, setError] = React.useState(null)
-  const [loading, setLoading] = React.useState(false)
+  const dispatch = useCatDispatch()
 
   React.useEffect(() => {
-    setLoading(true)
+    dispatch({ type: "factLoading", payload: true })
     fetch(endpoint)
       .then((res) => res.json())
       .then((data) => {
-        setFact(data.fact)
-        setLoading(false)
+        dispatch({ type: "fact", payload: data.fact })
+        dispatch({ type: "factLoading", payload: false })
       })
       .catch((err) => {
-        setError(err)
-        setLoading(false)
+        dispatch({ type: "factError", payload: err })
+        dispatch({ type: "factLoading", payload: false })
       })
   }, [])
-
-  return [fact, error, loading]
 }
 
 export default useFact
