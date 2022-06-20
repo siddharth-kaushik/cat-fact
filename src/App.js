@@ -1,35 +1,19 @@
-import { useState, useCallback, useEffect } from "react"
+import { useCallback, useEffect } from "react"
 
-import { useBreeds, useFact } from "./hooks"
+import { useBreeds, useFact, useFilteredBreeds } from "./hooks"
 import { Breeds, Fact, SearchBar } from "./components"
-import { useCatState } from "./context"
+import { useCatState, useCatDispatch } from "./context"
 
 import "./App.css"
 
 function App() {
   useFact()
-  const { search } = useCatState()
+  useBreeds()
+  useFilteredBreeds()
 
-  const [page, setPage] = useState(1)
-
-  const [breeds, error, loading, hasMore] = useBreeds(page)
-  const [filtered, setFiltered] = useState([])
-
+  const dispatch = useCatDispatch()
+  const { breeds, breedsLoading, hasMore, filtered, page } = useCatState()
   const stat = `${filtered.length} / ${breeds.length}`
-
-  useEffect(() => {
-    if (!search) setFiltered(breeds)
-
-    const text = search.toLowerCase()
-    const list = breeds.filter((item) => {
-      const breedMatches = item.breed.toLowerCase().includes(text)
-      const patternMatches = item.pattern.toLowerCase().includes(text)
-
-      return breedMatches || patternMatches
-    })
-
-    setFiltered(list)
-  }, [breeds, search])
 
   const onScroll = useCallback(
     (e) => {
@@ -39,11 +23,11 @@ function App() {
 
       const reachingEnd = scrollTop + windowHeight + buffer > scrollHeight
 
-      if (reachingEnd && !loading && hasMore) {
-        setPage((prev) => prev + 1)
+      if (reachingEnd && !breedsLoading && hasMore) {
+        dispatch({ type: "page", payload: page + 1 })
       }
     },
-    [hasMore, loading]
+    [hasMore, breedsLoading]
   )
 
   useEffect(() => {
@@ -57,7 +41,7 @@ function App() {
       <Fact />
       <SearchBar />
       <h3>{stat}</h3>
-      <Breeds list={filtered} error={error} loading={loading} />
+      <Breeds />
       {!hasMore && <div>No more breeds...</div>}
     </div>
   )
