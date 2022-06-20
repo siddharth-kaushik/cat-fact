@@ -8,8 +8,11 @@ import "./App.css"
 function App() {
   const [page, setPage] = useState(1)
   const [search, setSearch] = useState("")
+
   const [breeds, error, loading, hasMore] = useBreeds(page)
   const [filtered, setFiltered] = useState([])
+
+  const stat = `${filtered.length} / ${breeds.length}`
 
   useEffect(() => {
     if (!search) setFiltered(breeds)
@@ -50,10 +53,9 @@ function App() {
       <h1>The Cat Fact App</h1>
       <Fact />
       <SearchBar value={search} onChange={(v) => setSearch(v)} />
-      <h3>
-        {filtered.length} / {breeds.length}
-      </h3>
+      <h3>{stat}</h3>
       <Breeds list={filtered} error={error} loading={loading} />
+      {!hasMore && <div>No more breeds...</div>}
     </div>
   )
 }
