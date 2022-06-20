@@ -1,13 +1,16 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import "./index.css"
+import { CatProvider } from "./context"
 import App from "./App"
 import reportWebVitals from "./reportWebVitals"
 
 const root = document.getElementById("root")
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CatProvider>
+      <App />
+    </CatProvider>
   </React.StrictMode>,
   root
 )
