@@ -2,7 +2,7 @@ import Breed from "./Breed"
 import { useCatState } from "../context"
 
 function Breeds() {
-  const { filtered, breedsLoading, breedsError } = useCatState()
+  const { filtered, breedsLoading, breedsError, hasMore } = useCatState()
 
   return (
     <>
@@ -13,6 +13,7 @@ function Breeds() {
       </div>
       {breedsLoading && "Loading..."}
       {breedsError && `Error fetching breeds ${breedsError?.message}`}
+      {!hasMore && "No more breeds..."}
     </>
   )
 }
