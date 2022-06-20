@@ -1,29 +1,27 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
+import { useCatState, useCatDispatch } from "../context"
 
 const endpoint = "https://catfact.ninja/breeds"
 
-function useBreeds(page) {
-  const [breed, setBreed] = useState([])
-  const [error, setError] = useState(null)
-  const [loading, setLoading] = useState(false)
-  const [hasMore, setHasMore] = useState(false)
+function useBreeds() {
+  const dispatch = useCatDispatch()
+  const { breeds, page } = useCatState()
 
   useEffect(() => {
-    setLoading(true)
+    dispatch({ type: "breedsLoading", payload: true })
     fetch(`${endpoint}?page=` + page)
       .then((res) => res.json())
       .then((json) => {
-        setBreed((prev) => [...new Set([...prev, ...json.data])])
-        setHasMore(json.data.length > 0)
-        setLoading(false)
+        const list = [...new Set([...breeds, ...json.data])]
+        dispatch({ type: "breeds", payload: list })
+        dispatch({ type: "hasMore", payload: json.data.length > 0 })
+        dispatch({ type: "breedsLoading", payload: false })
       })
       .catch((err) => {
-        setError(err)
-        setLoading(false)
+        dispatch({ type: "breedsError", payload: err })
+        dispatch({ type: "breedsLoading", payload: false })
       })
   }, [page])
-
-  return [breed, error, loading, hasMore]
 }
 
 export default useBreeds

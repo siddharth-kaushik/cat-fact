@@ -1,15 +1,18 @@
 import Breed from "./Breed"
+import { useCatState } from "../context"
 
-function Breeds({ list, error, loading }) {
+function Breeds() {
+  const { filtered, breedsLoading, breedsError } = useCatState()
+
   return (
     <>
       <div className="Breeds">
-        {list.map((item) => (
+        {filtered.map((item) => (
           <Breed key={item.breed} value={item} />
         ))}
       </div>
-      {loading && "Loading..."}
-      {error && `Error fetching breeds ${error?.message}`}
+      {breedsLoading && "Loading..."}
+      {breedsError && `Error fetching breeds ${breedsError?.message}`}
     </>
   )
 }
