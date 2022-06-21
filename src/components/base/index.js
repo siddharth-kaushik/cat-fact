@@ -6,6 +6,7 @@ import Overline from "./Overline"
 import Picture from "./Picture"
 import ToggleButton from "./ToggleButton"
 import Link from "./Link"
+import SearchInput from "./SearchInput"
 
 export {
   GlobalStyles,
@@ -16,4 +17,5 @@ export {
   Picture,
   ToggleButton,
   Link,
+  SearchInput,
 }

@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Heading } from "./base"
+import { Heading, SearchInput } from "./base"
 import { useCatState, useCatDispatch } from "../context"
 
 function SearchBar() {
@@ -8,13 +8,13 @@ function SearchBar() {
   const { breeds, filtered, search } = useCatState()
   const stat = `${filtered.length} / ${breeds.length}`
 
-  const handleChange = () => (e) => {
-    dispatch({ type: "search", payload: e.target.value })
+  const handleChange = () => (v) => {
+    dispatch({ type: "search", payload: v })
   }
 
   return (
     <>
-      <input
+      <SearchInput
         type="text"
         value={search}
         placeholder="search"
