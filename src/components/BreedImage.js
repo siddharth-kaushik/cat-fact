@@ -22,14 +22,18 @@ function BreedImage({ name }) {
 export default React.memo(BreedImage)
 
 const Wrapper = styled.div`
+  display: grid;
   aspect-ratio: 1 / 1;
-  max-width: 240px;
+  width: 210px;
   margin-top: auto;
 `
 
 const StyledImage = styled.img`
+  align-self: flex-end;
+  width: 100%;
+  max-width: 210px;
   aspect-ratio: 1 / 1;
-  max-width: 100%;
+  object-fit: cover;
   opacity: ${(props) => (props.loaded ? 1 : 0)};
   transition: opacity 300ms ease-in 0ms;
 `
