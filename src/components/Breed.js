@@ -6,8 +6,9 @@ import { useIntersectionObserver } from "../hooks"
 import CloseSquareFillIcon from "../icons/CloseSquareFill"
 import InfoIcon from "../icons/InfoFill"
 
-import { Heading } from "./base"
+import { Heading, Text } from "./base"
 import BreedImage from "./BreedImage"
+import BreedInfo from "./BreedInfo"
 
 function Breed({ value }) {
   const { breed, country, origin, coat, pattern } = value
@@ -26,35 +27,25 @@ function Breed({ value }) {
   })
 
   return (
-    <Wrapper ref={ref}>
+    <Wrapper ref={ref} toggled={toggled}>
       <Heading level={5}>{breed}</Heading>
-      <span>{country}</span>
+      <StyledText>{country}</StyledText>
 
       {visible && <BreedImage name={breed} />}
 
-      <Info visible={toggled}>
-        <InfoItem>
-          <span>Origin:</span>
-          {origin || "-"}
-        </InfoItem>
-        <InfoItem>
-          <span>Coat:</span>
-          {coat || "-"}
-        </InfoItem>
-        <InfoItem>
-          <span>Pattern:</span>
-          {pattern || "-"}
-        </InfoItem>
-      </Info>
+      <BreedInfo
+        origin={origin}
+        coat={coat}
+        pattern={pattern}
+        visible={toggled}
+      />
 
-      <ToggleWrapper>
-        <StyledButton
-          value={toggled}
-          defaultIcon={<InfoIcon />}
-          activeIcon={<CloseSquareFillIcon />}
-          onClick={() => setToggled((prev) => !prev)}
-        />
-      </ToggleWrapper>
+      <StyledButton
+        value={toggled}
+        defaultIcon={<InfoIcon />}
+        activeIcon={<CloseSquareFillIcon />}
+        onClick={() => setToggled((prev) => !prev)}
+      />
     </Wrapper>
   )
 }
@@ -62,43 +53,25 @@ function Breed({ value }) {
 export default React.memo(Breed)
 
 const Wrapper = styled.div`
+  --border-color: var(--${(props) => (props.toggled ? "ruber" : "carrot")});
   display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
+  background-color: var(--polar);
+  border: 0.125rem solid var(--border-color);
   border-radius: 6px;
-  padding: 20px;
+  padding: 16px 30px 0;
   padding-block-end: 0;
   overflow: hidden;
+  transition: border-color .15s ease-in-out;
 `
 
-const Info = styled.ul`
-  list-style: none;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: white;
-  border-top: 1px solid #ccc;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  padding: 20px;
-  margin: 0;
-  transform: translateY(${(props) => (props.visible ? "0" : "100%")});
-  transition: transform 300ms ease-in-out 0ms;
-`
-
-const InfoItem = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`
-
-const ToggleWrapper = styled.div`
-  position: absolute;
-  top: 6px;
-  right: 6px;
+const StyledText = styled(Text)`
+  color: var(--elephant);
 `
 
 const StyledButton = styled(ToggleButton)`
+  position: absolute;
+  top: 6px;
+  right: 6px;
   color: var(--${(props) => (props.value ? "ruber" : "honey")});
 `
