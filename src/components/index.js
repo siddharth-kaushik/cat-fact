@@ -1,7 +1,7 @@
 import Logo from "./Logo"
 import Breeds from "./Breeds"
-import Fact from "./Fact"
+import FactSection from "./FactSection"
 import SearchBar from "./SearchBar"
 
-export { Logo, Breeds, Fact, SearchBar }
+export { Logo, Breeds, FactSection, SearchBar }
 export * from "./base"
