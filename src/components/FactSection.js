@@ -34,6 +34,7 @@ const Wrapper = styled.section`
   border-radius: 20px;
   padding: 48px 64px;
   margin: 0 auto;
+  margin-top: 96px;
 `
 
 const StyledPicture = styled(Picture)`
