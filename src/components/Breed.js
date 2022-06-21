@@ -3,7 +3,7 @@ import styled from "styled-components/macro"
 
 import { ToggleButton } from "./base"
 import { useIntersectionObserver } from "../hooks"
-import CloseFillIcon from "../icons/CloseFill"
+import CloseSquareFillIcon from "../icons/CloseSquareFill"
 import InfoIcon from "../icons/InfoFill"
 
 import { Heading } from "./base"
@@ -51,7 +51,7 @@ function Breed({ value }) {
         <StyledButton
           value={toggled}
           defaultIcon={<InfoIcon />}
-          activeIcon={<CloseFillIcon />}
+          activeIcon={<CloseSquareFillIcon />}
           onClick={() => setToggled((prev) => !prev)}
         />
       </ToggleWrapper>
@@ -95,8 +95,8 @@ const InfoItem = styled.li`
 
 const ToggleWrapper = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 6px;
+  right: 6px;
 `
 
 const StyledButton = styled(ToggleButton)`
