@@ -66,3 +66,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+*:focus-visible {
+  outline-color: var(--ruber);
+  outline-width: 3px;
+  outline-offset: 1px;
+  outline-style: dotted;
+  transition: outline-offset 0.1s ease-in-out;
+}
+
+*:focus-visible {
+  outline-offset: 3px;
+}
+
+::selection {
+  color: var(--polar);
+  background-color: var(--lavender);
+}
