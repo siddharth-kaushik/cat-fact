@@ -1,19 +1,19 @@
 @font-face {
-  font-family: 'Recoleta';
-  src:  url('./fonts/recoleta-regular.woff2') format('woff2'),
-        url('./fonts/recoleta-regular.woff') format('woff');
+  font-family: "Recoleta";
+  src: url("./fonts/recoleta-regular.woff2") format("woff2"),
+    url("./fonts/recoleta-regular.woff") format("woff");
   font-weight: 400;
 }
 @font-face {
-  font-family: 'Recoleta';
-  src:  url('./fonts/recoleta-semi-bold.woff2') format('woff2'),
-        url('./fonts/recoleta-semi-bold.woff') format('woff');
+  font-family: "Recoleta";
+  src: url("./fonts/recoleta-semi-bold.woff2") format("woff2"),
+    url("./fonts/recoleta-semi-bold.woff") format("woff");
   font-weight: 600;
 }
 @font-face {
-  font-family: 'Recoleta';
-  src:  url('./fonts/recoleta-bold.woff2') format('woff2'),
-        url('./fonts/recoleta-bold.woff') format('woff');
+  font-family: "Recoleta";
+  src: url("./fonts/recoleta-bold.woff2") format("woff2"),
+    url("./fonts/recoleta-bold.woff") format("woff");
   font-weight: 700;
 }
 
@@ -31,13 +31,18 @@
   --color-foreground: var(--panda);
   --color-background: var(--cornsilk);
 }
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   position: relative;
   padding: 0;
   margin: 0;
 }
 
-html, body {
+html,
+body {
   min-block-size: 100%;
 }
 
@@ -51,6 +56,9 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+  font-family: "Recoleta", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   color: var(--color-foreground);
   background-color: var(--color-background);
   -webkit-tap-highlight-color: transparent;
