@@ -4,3 +4,4 @@ import Fact from "./Fact"
 import SearchBar from "./SearchBar"
 
 export { Logo, Breeds, Fact, SearchBar }
+export * from "./base"
