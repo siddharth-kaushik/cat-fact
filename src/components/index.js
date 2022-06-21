@@ -3,6 +3,7 @@ import Breeds from "./Breeds"
 import FactSection from "./FactSection"
 import SearchSection from "./SearchSection"
 import Header from "./Header"
+import Footer from "./Footer"
 
-export { Logo, Breeds, FactSection, SearchSection, Header }
+export { Logo, Breeds, FactSection, SearchSection, Header, Footer }
 export * from "./base"

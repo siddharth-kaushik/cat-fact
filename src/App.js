@@ -1,5 +1,12 @@
 import { useBreeds, useFact, useFilteredBreeds, useWindowScroll } from "./hooks"
-import { GlobalStyles, Header, FactSection, SearchSection, Breeds } from "./components"
+import {
+  GlobalStyles,
+  Header,
+  FactSection,
+  SearchSection,
+  Breeds,
+  Footer,
+} from "./components"
 
 function App() {
   useFact()
@@ -14,6 +21,7 @@ function App() {
       <FactSection />
       <SearchSection />
       <Breeds />
+      <Footer />
     </>
   )
 }
