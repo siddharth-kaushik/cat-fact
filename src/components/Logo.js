@@ -35,9 +35,9 @@ const Logo = ({ color = "#f5f5f5", size = 121 }) => {
 export default React.memo(Logo)
 
 const Wrapper = styled.div`
-  display: inline-flex;
-  flex-direction: column;
+  display: inline-grid;
   padding-top: 30px;
+  margin: 0 auto;
 `
 
 const Container = styled.div`
