@@ -1,4 +1,6 @@
 import Breed from "./Breed"
+import styled from "styled-components/macro"
+
 import { useCatState } from "../context"
 
 function Breeds() {
@@ -6,11 +8,11 @@ function Breeds() {
 
   return (
     <>
-      <div className="Breeds">
+      <Wrapper>
         {filtered.map((item) => (
           <Breed key={item.breed} value={item} />
         ))}
-      </div>
+      </Wrapper>
       {breedsLoading && "Loading..."}
       {breedsError && `Error fetching breeds ${breedsError?.message}`}
       {!hasMore && "No more breeds..."}
@@ -19,3 +21,9 @@ function Breeds() {
 }
 
 export default Breeds
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+`

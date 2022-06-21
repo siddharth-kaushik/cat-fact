@@ -1,8 +1,6 @@
 import { useBreeds, useFact, useFilteredBreeds, useWindowScroll } from "./hooks"
 import { Breeds, Fact, SearchBar } from "./components"
 
-import "./App.css"
-
 function App() {
   useFact()
   useBreeds()
