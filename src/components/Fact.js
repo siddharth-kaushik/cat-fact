@@ -5,13 +5,14 @@ import { Text } from "./base"
 
 function Fact() {
   const { fact, factLoading, factError } = useCatState()
-  const factText = factLoading
-    ? "loading fact..."
-    : factError
-    ? `error loading fact ${factError.message}`
-    : fact
 
-  return <Text>{factText}</Text>
+  return (
+    <>
+      {fact && <Text>{fact}</Text>}
+      {factLoading && "loading..."}
+      {factError && `error loading fact ${factError.message}`}
+    </>
+  )
 }
 
 export default React.memo(Fact)
