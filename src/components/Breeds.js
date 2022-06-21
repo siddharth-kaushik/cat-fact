@@ -2,6 +2,7 @@ import Breed from "./Breed"
 import styled from "styled-components/macro"
 
 import { useCatState } from "../context"
+import { Loading, Error, NoMore } from "./status"
 
 function Breeds() {
   const { filtered, breedsLoading, breedsError, hasMore } = useCatState()
@@ -13,9 +14,9 @@ function Breeds() {
           <Breed key={item.breed} value={item} />
         ))}
       </Wrapper>
-      {breedsLoading && "Loading..."}
-      {breedsError && `Error fetching breeds ${breedsError?.message}`}
-      {!hasMore && "No more breeds..."}
+      {breedsLoading && <Loading />}
+      {breedsError && <Error error={breedsError} />}
+      {!hasMore && <NoMore />}
     </>
   )
 }

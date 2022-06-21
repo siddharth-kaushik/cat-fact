@@ -50,7 +50,7 @@ const StyledFooter = styled.footer`
   justify-content: center;
   background-color: var(--panda);
   color: var(--polar);
-  padding: 30px 40px;
+  padding: 50px 40px;
 `
 
 const StyledText = styled(Text)`

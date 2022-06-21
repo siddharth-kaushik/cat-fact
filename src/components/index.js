@@ -7,3 +7,4 @@ import Footer from "./Footer"
 
 export { Logo, Breeds, FactSection, SearchSection, Header, Footer }
 export * from "./base"
+export * from "./status"
