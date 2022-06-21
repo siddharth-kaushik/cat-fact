@@ -48,11 +48,11 @@ function Breed({ value }) {
       </Info>
 
       <ToggleWrapper>
-        <ToggleButton
+        <StyledButton
           value={toggled}
           defaultIcon={<InfoIcon />}
           activeIcon={<CloseFillIcon />}
-          onClick={(v) => setToggled((prev) => !prev)}
+          onClick={() => setToggled((prev) => !prev)}
         />
       </ToggleWrapper>
     </Wrapper>
@@ -97,4 +97,8 @@ const ToggleWrapper = styled.div`
   position: absolute;
   top: 0;
   right: 0;
+`
+
+const StyledButton = styled(ToggleButton)`
+  color: var(--${(props) => (props.value ? "ruber" : "honey")});
 `

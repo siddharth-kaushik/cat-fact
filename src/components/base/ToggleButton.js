@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components/macro"
 
-function ToggleButton({ defaultIcon, activeIcon, value, onClick }) {
+function ToggleButton({ defaultIcon, activeIcon, value, onClick, ...rest }) {
   const iconMarkup = value ? activeIcon : defaultIcon
 
   return (
-    <StyledButton value={value} onClick={onClick}>
+    <StyledButton onClick={onClick} {...rest}>
       {iconMarkup}
     </StyledButton>
   )
@@ -22,7 +22,6 @@ const StyledButton = styled.button`
   background: none;
   border: none;
   border-radius: 6px;
-  color: var(--${(props) => (props.value ? "ruber" : "honey")});
   cursor: pointer;
 
   &::before {
