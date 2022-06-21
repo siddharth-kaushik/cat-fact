@@ -5,5 +5,15 @@ import Caption from "./Caption"
 import Overline from "./Overline"
 import Picture from "./Picture"
 import ToggleButton from "./ToggleButton"
+import Link from "./Link"
 
-export { GlobalStyles, Heading, Text, Caption, Overline, Picture, ToggleButton }
+export {
+  GlobalStyles,
+  Heading,
+  Text,
+  Caption,
+  Overline,
+  Picture,
+  ToggleButton,
+  Link,
+}
