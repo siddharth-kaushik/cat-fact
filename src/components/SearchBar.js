@@ -1,4 +1,6 @@
 import React from "react"
+
+import { Heading } from "./base"
 import { useCatState, useCatDispatch } from "../context"
 
 function SearchBar() {
@@ -18,7 +20,7 @@ function SearchBar() {
         placeholder="search"
         onChange={handleChange()}
       />
-      <h3>{stat}</h3>
+      <Heading level={5}>{stat}</Heading>
     </>
   )
 }

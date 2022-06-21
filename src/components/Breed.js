@@ -5,6 +5,7 @@ import { useIntersectionObserver } from "../hooks"
 import CloseFillIcon from "../icons/CloseFill"
 import InfoIcon from "../icons/Info"
 
+import { Heading } from "./base"
 import BreedImage from "./BreedImage"
 
 function Breed({ value }) {
@@ -25,7 +26,7 @@ function Breed({ value }) {
 
   return (
     <Wrapper ref={ref}>
-      <h5>{breed}</h5>
+      <Heading level={5}>{breed}</Heading>
       <span>{country}</span>
 
       {visible && <BreedImage name={breed} />}
