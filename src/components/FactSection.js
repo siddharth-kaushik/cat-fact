@@ -24,7 +24,7 @@ function FactSection() {
 
 export default FactSection
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: grid;
   gap: 10px;
   width: 100vw;

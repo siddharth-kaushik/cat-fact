@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
+h1, h2, h3, h4, h5, h6, p, span, a {
+  color: inherit;
+}
+
 h1 {
   font-size: 3.052rem;
   font-weight: 700;
@@ -33,7 +37,6 @@ h6 {
 }
 
 p, span {
-  color: inherit;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.35rem;
