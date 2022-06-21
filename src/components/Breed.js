@@ -1,9 +1,10 @@
 import React, { useState, useRef } from "react"
 import styled from "styled-components/macro"
 
+import { ToggleButton } from "./base"
 import { useIntersectionObserver } from "../hooks"
 import CloseFillIcon from "../icons/CloseFill"
-import InfoIcon from "../icons/Info"
+import InfoIcon from "../icons/InfoFill"
 
 import { Heading } from "./base"
 import BreedImage from "./BreedImage"
@@ -47,9 +48,12 @@ function Breed({ value }) {
       </Info>
 
       <ToggleWrapper>
-        <ToggleButton onClick={() => setToggled((prev) => !prev)}>
-          {toggled ? <CloseFillIcon /> : <InfoIcon />}
-        </ToggleButton>
+        <ToggleButton
+          value={toggled}
+          defaultIcon={<InfoIcon />}
+          activeIcon={<CloseFillIcon />}
+          onClick={(v) => setToggled((prev) => !prev)}
+        />
       </ToggleWrapper>
     </Wrapper>
   )
@@ -91,13 +95,6 @@ const InfoItem = styled.li`
 
 const ToggleWrapper = styled.div`
   position: absolute;
-  top: 16px;
-  right: 16px;
-`
-
-const ToggleButton = styled.button`
-  background: none;
-  border: none;
-  border-radius: 100vmax;
-  cursor: pointer;
+  top: 0;
+  right: 0;
 `
