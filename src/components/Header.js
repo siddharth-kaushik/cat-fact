@@ -4,6 +4,7 @@ import styled from "styled-components/macro"
 import { Heading, Link } from "./base"
 import Logo from "./Logo"
 
+const designs = ""
 const github = "https://github.com/siddharth-kaushik/cat-fact"
 const mailTo = "mailto:sidharth.basu@icloud.com"
 
@@ -11,11 +12,11 @@ function Header() {
   return (
     <StyledHeader>
       <Nav>
-        <Link to="#footer">
-          <Heading level={6}>Credits</Heading>
+        <Link to={designs}>
+          <Heading level={6}>Design</Heading>
         </Link>
 
-        <Link to={github} external>
+        <Link to={github}>
           <Heading level={6}>Github</Heading>
         </Link>
 

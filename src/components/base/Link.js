@@ -3,18 +3,19 @@ import styled from "styled-components/macro"
 
 import ArrowUpRightFill from "../../icons/ArrowUpRightFill"
 
-function Link({ children, to, external = false, ...rest }) {
+function Link({ children, to, ...rest }) {
   const [hovered, setHovered] = useState(false)
 
   return (
     <StyledLink
       href={to}
+      target="_blank"
       {...rest}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {children}
-      {external && <StyledIcon hovered={hovered} />}
+      <StyledIcon hovered={hovered} />
     </StyledLink>
   )
 }
