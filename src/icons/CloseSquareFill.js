@@ -1,6 +1,6 @@
 import React from "react"
 
-const CloseFill = ({ color = "currentColor", ...props }) => {
+const CloseSquareFill = ({ color = "currentColor", ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,4 +15,4 @@ const CloseFill = ({ color = "currentColor", ...props }) => {
   )
 }
 
-export default React.memo(CloseFill)
+export default React.memo(CloseSquareFill)

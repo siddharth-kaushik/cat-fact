@@ -1,34 +1,53 @@
 @font-face {
-  font-family: 'Recoleta';
-  src:  url('./fonts/recoleta-regular.woff2') format('woff2'),
-        url('./fonts/recoleta-regular.woff') format('woff');
+  font-family: "Recoleta";
+  src: url("./fonts/recoleta-regular.woff2") format("woff2"),
+    url("./fonts/recoleta-regular.woff") format("woff");
   font-weight: 400;
 }
 @font-face {
-  font-family: 'Recoleta';
-  src:  url('./fonts/recoleta-semi-bold.woff2') format('woff2'),
-        url('./fonts/recoleta-semi-bold.woff') format('woff');
+  font-family: "Recoleta";
+  src: url("./fonts/recoleta-semi-bold.woff2") format("woff2"),
+    url("./fonts/recoleta-semi-bold.woff") format("woff");
   font-weight: 600;
 }
 @font-face {
-  font-family: 'Recoleta';
-  src:  url('./fonts/recoleta-bold.woff2') format('woff2'),
-        url('./fonts/recoleta-bold.woff') format('woff');
+  font-family: "Recoleta";
+  src: url("./fonts/recoleta-bold.woff2") format("woff2"),
+    url("./fonts/recoleta-bold.woff") format("woff");
   font-weight: 700;
 }
 
-*, *::before, *::after {
+:root {
+  --cornsilk: #faf5de;
+  --panda: #0d0b23;
+  --elephant: #575860;
+  --koala: #969592;
+  --polar: #f5f5f5;
+  --ruber: #d24174;
+  --lavender: #ada0c9;
+  --honey: #f5b22e;
+  --carrot: #f59025;
+
+  --color-foreground: var(--panda);
+  --color-background: var(--cornsilk);
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   position: relative;
   padding: 0;
   margin: 0;
 }
 
-html, body {
+html,
+body {
   min-block-size: 100%;
 }
 
 html {
+  font-size: 20px;
   line-height: 1.15;
   tab-size: 4;
 }
@@ -37,13 +56,30 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  font-family: "Recoleta", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  font-size: 20px;
+  font-family: "Recoleta", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  color: var(--color-foreground);
+  background-color: var(--color-background);
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
 
+*:focus-visible {
+  outline-color: var(--ruber);
+  outline-width: 3px;
+  outline-offset: 1px;
+  outline-style: dotted;
+  transition: outline-offset 0.1s ease-in-out;
+}
+
+*:focus-visible {
+  outline-offset: 3px;
+}
+
+::selection {
+  color: var(--polar);
+  background-color: var(--ruber);
+}

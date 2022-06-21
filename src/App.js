@@ -1,7 +1,12 @@
 import { useBreeds, useFact, useFilteredBreeds, useWindowScroll } from "./hooks"
-import { Breeds, Fact, SearchBar } from "./components"
-
-import "./App.css"
+import {
+  GlobalStyles,
+  Header,
+  FactSection,
+  SearchSection,
+  Breeds,
+  Footer,
+} from "./components"
 
 function App() {
   useFact()
@@ -10,12 +15,14 @@ function App() {
   useWindowScroll()
 
   return (
-    <div className="App">
-      <h1>The Cat Fact App</h1>
-      <Fact />
-      <SearchBar />
+    <>
+      <GlobalStyles />
+      <Header />
+      <FactSection />
+      <SearchSection />
       <Breeds />
-    </div>
+      <Footer />
+    </>
   )
 }
 
