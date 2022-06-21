@@ -1,5 +1,5 @@
 import { useBreeds, useFact, useFilteredBreeds, useWindowScroll } from "./hooks"
-import { Heading, Breeds, Fact, SearchBar } from "./components"
+import { GlobalStyles, Heading, Breeds, Fact, SearchBar } from "./components"
 
 function App() {
   useFact()
@@ -9,6 +9,7 @@ function App() {
 
   return (
     <>
+      <GlobalStyles />
       <Heading level={1}>The Cat Fact App</Heading>
       <Fact />
       <SearchBar />

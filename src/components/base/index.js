@@ -1,4 +1,5 @@
+import GlobalStyles from "./GlobalStyles"
 import Heading from "./Heading"
 import Text from "./Text"
 
-export { Heading, Text }
+export { GlobalStyles, Heading, Text }
