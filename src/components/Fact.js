@@ -1,15 +1,17 @@
 import React from "react"
 
 import { useCatState } from "../context"
+import { Text } from "./base"
 
 function Fact() {
   const { fact, factLoading, factError } = useCatState()
+  const factText = factLoading
+    ? "loading fact..."
+    : factError
+    ? `error loading fact ${factError.message}`
+    : fact
 
-  if (factError) return "problem fetching cat fact"
-
-  if (factLoading) return "loading..."
-
-  return <p>{fact}</p>
+  return <Text>{factText}</Text>
 }
 
 export default React.memo(Fact)

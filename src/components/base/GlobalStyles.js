@@ -33,6 +33,7 @@ h6 {
 }
 
 p, span {
+  color: inherit;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.35rem;
