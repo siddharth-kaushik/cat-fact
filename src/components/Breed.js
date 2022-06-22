@@ -28,8 +28,8 @@ function Breed({ value }) {
 
   return (
     <Wrapper ref={ref} toggled={toggled}>
-      <Heading level={5}>{breed}</Heading>
-      <StyledText>{country}</StyledText>
+      <StyledHeading level={5}>{breed}</StyledHeading>
+      <StyledText>{country || "-"}</StyledText>
 
       {visible && <BreedImage name={breed} />}
 
@@ -56,13 +56,19 @@ const Wrapper = styled.div`
   --border-color: var(--${(props) => (props.toggled ? "ruber" : "carrot")});
   display: flex;
   flex-direction: column;
+  gap: 3px;
   background-color: var(--polar);
   border: 0.125rem solid var(--border-color);
   border-radius: 6px;
   padding: 16px 30px 0;
   padding-block-end: 0;
   overflow: hidden;
-  transition: border-color .15s ease-in-out;
+  transition: border-color 0.15s ease-in-out;
+`
+
+const StyledHeading = styled(Heading)`
+  line-height: 1.125;
+  padding-right: 16px;
 `
 
 const StyledText = styled(Text)`
