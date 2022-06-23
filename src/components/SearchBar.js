@@ -11,7 +11,7 @@ import fallbackSrc from "../images/search.png"
 function SearchBar() {
   const dispatch = useCatDispatch()
   const { breeds, filtered, search } = useCatState()
-  const stat = `${filtered.length} felines whiskered of ${breeds.length} meows`
+  const stat = `you are Meowing ${filtered.length} / ${breeds.length} whiskers`
 
   const handleChange = () => (v) => {
     dispatch({ type: "search", payload: v })
@@ -22,11 +22,13 @@ function SearchBar() {
       <SearchInput
         type="text"
         value={search}
-        placeholder="search"
+        placeholder="Meow here..."
         onChange={handleChange()}
       />
+
       <Heading level={5}>{stat}</Heading>
-      <StyledPicture
+
+      <SherlockCatPicture
         avif={avifSrc}
         webp={webpSrc}
         fallback={fallbackSrc}
@@ -40,14 +42,22 @@ export default SearchBar
 
 const Wrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
+  column-gap: 16px;
+  row-gap: 8px;
   color: var(--koala);
+  transform: translateX(0);
+
+  @media (max-width: 960px) {
+    width: 90%;
+    transform: translateX(48px);
+  }
 `
 
-const StyledPicture = styled(Picture)`
+const SherlockCatPicture = styled(Picture)`
   position: absolute;
   left: 0;
   top: 0;
-  transform: translateX(-72px);
+  transform: translateX(-120%);
 `

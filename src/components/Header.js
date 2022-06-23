@@ -37,7 +37,7 @@ const StyledHeader = styled.header`
   align-content: center;
   background-color: var(--panda);
   color: var(--polar);
-  padding: 30px 40px;
+  padding: 24px;
 `
 
 const Nav = styled.nav`

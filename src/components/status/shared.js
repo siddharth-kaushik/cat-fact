@@ -6,8 +6,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 60px;
 `
 
 export const StyledHeading = styled(Heading)`

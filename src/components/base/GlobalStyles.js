@@ -3,43 +3,37 @@ import { createGlobalStyle } from "styled-components"
 const GlobalStyles = createGlobalStyle`
 h1, h2, h3, h4, h5, h6, p, span, a {
   color: inherit;
+  line-height: 1.15;
 }
 
 h1 {
-  font-size: 3.052rem;
+  font-size: clamp(2.441rem, 4vw + 1rem, 3.052rem);
   font-weight: 700;
-  line-height: 4.15rem;
 }
 h2 {
-  font-size: 2.441rem;
+  font-size: clamp(1.953rem, 2.5vw + 1rem, 2.441rem);
   font-weight: 700;
-  line-height: 3.35rem;
 }
 h3{
-  font-size: 1.953rem;
+  font-size: clamp(1.563rem, 2vw + 1rem, 1.953rem);
   font-weight: 600;
-  line-height: 2.65rem;
 }
 h4 {
-  font-size: 1.563rem;
+  font-size: clamp(1.25rem, 1.25vw + 1rem, 1.563rem);
   font-weight: 600;
-  line-height: 2.1rem;
 }
 h5 {
   font-size: 1.25rem;
   font-weight: 700;
-  line-height: 1.7rem;
 }
 h6 {
   font-size: 1rem;
   font-weight: 700;
-  line-height: 1.35rem;
 }
 
 p, span {
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.35rem;
 }
 p.small,
 span.small {
