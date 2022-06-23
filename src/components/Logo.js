@@ -21,6 +21,7 @@ const Logo = ({ color = "#f5f5f5", size = 121 }) => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 469.247 120.84"
+        width="auto"
         height={size}
       >
         <g fill={color}>

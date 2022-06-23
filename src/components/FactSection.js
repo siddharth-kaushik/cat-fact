@@ -12,7 +12,7 @@ function FactSection() {
     <Wrapper>
       <Heading level={1}>The Cat Fact App</Heading>
       <Fact />
-      <StyledPicture
+      <IdeaCatPicture
         avif={avifSrc}
         webp={webpSrc}
         fallback={fallbackSrc}
@@ -25,21 +25,20 @@ function FactSection() {
 export default FactSection
 
 const Wrapper = styled.section`
+  --space-x: clamp(1.2rem, 4vw + 0.5rem, 3.2rem);
   display: grid;
   gap: 10px;
-  width: 100vw;
   max-width: 640px;
   color: var(--polar);
   background-color: var(--lavender);
   border-radius: 20px;
-  padding: 48px 64px;
+  padding: 48px var(--space-x);
   margin: 0 auto;
-  margin-top: 96px;
 `
 
-const StyledPicture = styled(Picture)`
+const IdeaCatPicture = styled(Picture)`
   position: absolute;
   top: 0;
-  left: 64px;
-  transform: translateY(-44px);
+  left: var(--space-x);
+  transform: translateY(-60%);
 `

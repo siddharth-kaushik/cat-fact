@@ -16,7 +16,7 @@ function SearchSection() {
         <Heading>{title}</Heading>
         <SearchBar />
 
-        <StyledPicture
+        <SuperCatPicture
           avif={avifSrc}
           webp={webpSrc}
           fallback={fallbackSrc}
@@ -30,24 +30,25 @@ function SearchSection() {
 export default SearchSection
 
 const Wrapper = styled.section`
-  width: 100vw;
-  max-height: 280px;
-  padding: 96px 20px 48px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding-block-start: 96px;
+  padding-block-end: 48px;
 `
 
 const Container = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  gap: 8px;
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   margin: 0 auto;
 `
 
-const StyledPicture = styled(Picture)`
+const SuperCatPicture = styled(Picture)`
   position: absolute;
-  top: -44px;
-  left: 100%;
+  top: 0;
+  right: 0;
+  transform: translate(-8%,-100%);
 `

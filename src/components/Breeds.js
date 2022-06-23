@@ -24,9 +24,10 @@ function Breeds() {
 export default Breeds
 
 const Wrapper = styled.div`
+  width: 100%;
   max-width: 1280px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 40px;
-  margin: 20px auto 60px;
+  gap: clamp(1.2rem, 1.95vw + 0.75rem, 2rem);
+  margin: 0 auto;
 `
