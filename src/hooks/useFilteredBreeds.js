@@ -1,12 +1,12 @@
-import { useEffect } from "react"
-import { useCatState, useCatDispatch } from "../context"
+import { useEffect } from 'react'
+import { useCatState, useCatDispatch } from '../context'
 
 function useFilteredBreeds() {
   const dispatch = useCatDispatch()
   const { search, breeds } = useCatState()
 
   useEffect(() => {
-    if (!search) dispatch({ type: "filtered", payload: breeds })
+    if (!search) dispatch({ type: 'filtered', payload: breeds })
 
     const text = search.toLowerCase()
     const list = breeds.filter((item) => {
@@ -16,9 +16,8 @@ function useFilteredBreeds() {
       return breedMatches || patternMatches
     })
 
-    dispatch({ type: "filtered", payload: list })
+    dispatch({ type: 'filtered', payload: list })
   }, [breeds, search, dispatch])
-  return <div>useFilteredBreeds</div>
 }
 
 export default useFilteredBreeds
