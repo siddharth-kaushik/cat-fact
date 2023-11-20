@@ -1,4 +1,4 @@
-import styled from "styled-components/macro"
+import styled from "styled-components"
 
 import { useBreeds, useFact, useFilteredBreeds, useWindowScroll } from "./hooks"
 import {
