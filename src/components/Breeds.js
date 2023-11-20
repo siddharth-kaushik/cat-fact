@@ -1,8 +1,8 @@
-import Breed from "./Breed"
-import styled from "styled-components/macro"
+import Breed from './Breed'
+import styled from 'styled-components'
 
-import { useCatState } from "../context"
-import { Loading, Error, NoMore } from "./status"
+import { useCatState } from '../context'
+import { Loading, Error, NoMore } from './status'
 
 function Breeds() {
   const { filtered, breedsLoading, breedsError, hasMore } = useCatState()

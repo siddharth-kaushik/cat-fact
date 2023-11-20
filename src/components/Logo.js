@@ -1,13 +1,13 @@
-import React from "react"
-import styled from "styled-components/macro"
+import React from 'react'
+import styled from 'styled-components'
 
-import { Picture } from "./base"
+import { Picture } from './base'
 
-import avifSrc from "../images/header.avif"
-import webpSrc from "../images/header.webp"
-import fallbackSrc from "../images/header.png"
+import avifSrc from '../images/header.avif'
+import webpSrc from '../images/header.webp'
+import fallbackSrc from '../images/header.png'
 
-const Logo = ({ color = "#f5f5f5", size = 121 }) => {
+const Logo = ({ color = '#f5f5f5', size = 121 }) => {
   return (
     <Wrapper>
       <Container>

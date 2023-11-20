@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components/macro"
+import React from 'react'
+import styled from 'styled-components'
 
-import CloseCircleFillIcon from "../../icons/CloseCircleFill"
+import CloseCircleFillIcon from '../../icons/CloseCircleFill'
 
 function SearchInput({ light = false, value, onChange, ...rest }) {
   return (
@@ -12,7 +12,7 @@ function SearchInput({ light = false, value, onChange, ...rest }) {
         onChange={(e) => onChange(e.target.value)}
         {...rest}
       />
-      {value && <StyledIcon onClick={() => onChange("")} />}
+      {value && <StyledIcon onClick={() => onChange('')} />}
     </Wrapper>
   )
 }
@@ -20,14 +20,14 @@ function SearchInput({ light = false, value, onChange, ...rest }) {
 export default SearchInput
 
 const Wrapper = styled.div`
-  --border-color: var(--${(props) => (props.light ? "cornsilk" : "ruber")});
-  --caret-color: var(--${(props) => (props.light ? "polar" : "ruber")});
-  --placeholder-color: var(--${(props) => (props.light ? "polar" : "koala")});
-  --icon-color: var(--${(props) => (props.light ? "cornsilk" : "ruber")});
+  --border-color: var(--${(props) => (props.light ? 'cornsilk' : 'ruber')});
+  --caret-color: var(--${(props) => (props.light ? 'polar' : 'ruber')});
+  --placeholder-color: var(--${(props) => (props.light ? 'polar' : 'koala')});
+  --icon-color: var(--${(props) => (props.light ? 'cornsilk' : 'ruber')});
   display: inline-flex;
 `
 
-const StyledInput = styled.input.attrs({ type: "text" })`
+const StyledInput = styled.input.attrs({ type: 'text' })`
   height: 56px;
   background: transparent;
   border-radius: 100vmax;

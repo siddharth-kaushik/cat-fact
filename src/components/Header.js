@@ -1,12 +1,13 @@
-import React from "react"
-import styled from "styled-components/macro"
+import React from 'react'
+import styled from 'styled-components'
 
-import { Heading, Link } from "./base"
-import Logo from "./Logo"
+import { Heading, Link } from './base'
+import Logo from './Logo'
 
-const designs = "https://xd.adobe.com/view/abcb728b-fbb8-439e-bb08-956c84afac0c-fe98"
-const github = "https://github.com/siddharth-kaushik/cat-fact"
-const mailTo = "mailto:sidharth.basu@icloud.com"
+const designs =
+  'https://xd.adobe.com/view/abcb728b-fbb8-439e-bb08-956c84afac0c-fe98'
+const github = 'https://github.com/siddharth-kaushik/cat-fact'
+const mailTo = 'mailto:sidharth.basu@icloud.com'
 
 function Header() {
   return (

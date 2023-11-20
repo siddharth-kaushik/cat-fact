@@ -1,7 +1,7 @@
-import { useState } from "react"
-import styled from "styled-components/macro"
+import { useState } from 'react'
+import styled from 'styled-components'
 
-import ArrowUpRightFill from "../../icons/ArrowUpRightFill"
+import ArrowUpRightFill from '../../icons/ArrowUpRightFill'
 
 function Link({ children, to, ...rest }) {
   const [hovered, setHovered] = useState(false)
@@ -29,9 +29,9 @@ const StyledLink = styled.a`
 `
 
 const StyledIcon = styled(ArrowUpRightFill)`
-  --shift-x: ${(props) => (props.hovered ? "0" : "-3px")};
-  --shift-y: ${(props) => (props.hovered ? "-50%" : "-3px")};
-  --scale: ${(props) => (props.hovered ? "1" : "0.8")};
+  --shift-x: ${(props) => (props.hovered ? '0' : '-3px')};
+  --shift-y: ${(props) => (props.hovered ? '-50%' : '-3px')};
+  --scale: ${(props) => (props.hovered ? '1' : '0.8')};
 
   position: absolute;
   top: 50%;
@@ -40,6 +40,8 @@ const StyledIcon = styled(ArrowUpRightFill)`
   transform: translate(var(--shift-x), var(--shift-y)) scale(var(--scale));
   opacity: ${(props) => (props.hovered ? 1 : 0)};
 
-  transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+  transition:
+    opacity 0.15s ease-in-out,
+    transform 0.15s ease-in-out;
   pointer-events: none;
 `

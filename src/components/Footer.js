@@ -1,17 +1,17 @@
-import React from "react"
-import styled from "styled-components/macro"
+import React from 'react'
+import styled from 'styled-components'
 
-import avifSrc from "../images/owner.avif"
-import webpSrc from "../images/owner.webp"
-import fallbackSrc from "../images/owner.png"
+import avifSrc from '../images/owner.avif'
+import webpSrc from '../images/owner.webp'
+import fallbackSrc from '../images/owner.png'
 
-import { Picture, Text, Link } from "./base"
+import { Picture, Text, Link } from './base'
 
-const title = "They knead some love. We all do."
+const title = 'They knead some love. We all do.'
 
-const website = "https://sidbits.com"
-const github = "https://github.com/siddharth-kaushik/cat-fact"
-const flaticon = "https://www.flaticon.com/free-icons/design"
+const website = 'https://sidbits.com'
+const github = 'https://github.com/siddharth-kaushik/cat-fact'
+const flaticon = 'https://www.flaticon.com/free-icons/design'
 
 function Footer() {
   return (
@@ -34,7 +34,8 @@ function Footer() {
           <StyledLink to={github}>Github</StyledLink>
         </Text>
         <Text small>
-          Credits: Illustrations by <StyledLink to={flaticon}>Flaticon</StyledLink>
+          Credits: Illustrations by{' '}
+          <StyledLink to={flaticon}>Flaticon</StyledLink>
         </Text>
       </Copyright>
     </StyledFooter>

@@ -1,14 +1,14 @@
-import React, { useState, useRef } from "react"
-import styled from "styled-components/macro"
+import React, { useState, useRef } from 'react'
+import styled from 'styled-components'
 
-import { ToggleButton } from "./base"
-import { useIntersectionObserver } from "../hooks"
-import CloseSquareFillIcon from "../icons/CloseSquareFill"
-import InfoIcon from "../icons/InfoFill"
+import { ToggleButton } from './base'
+import { useIntersectionObserver } from '../hooks'
+import CloseSquareFillIcon from '../icons/CloseSquareFill'
+import InfoIcon from '../icons/InfoFill'
 
-import { Heading, Text } from "./base"
-import BreedImage from "./BreedImage"
-import BreedInfo from "./BreedInfo"
+import { Heading, Text } from './base'
+import BreedImage from './BreedImage'
+import BreedInfo from './BreedInfo'
 
 function Breed({ value }) {
   const { breed, country, origin, coat, pattern } = value
@@ -29,7 +29,7 @@ function Breed({ value }) {
   return (
     <Wrapper ref={ref} toggled={toggled}>
       <StyledHeading level={5}>{breed}</StyledHeading>
-      <StyledText>{country || "-"}</StyledText>
+      <StyledText>{country || '-'}</StyledText>
 
       {visible && <BreedImage name={breed} />}
 
@@ -53,7 +53,7 @@ function Breed({ value }) {
 export default React.memo(Breed)
 
 const Wrapper = styled.div`
-  --border-color: var(--${(props) => (props.toggled ? "ruber" : "carrot")});
+  --border-color: var(--${(props) => (props.toggled ? 'ruber' : 'carrot')});
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -79,5 +79,5 @@ const StyledButton = styled(ToggleButton)`
   position: absolute;
   top: 6px;
   right: 6px;
-  color: var(--${(props) => (props.value ? "ruber" : "honey")});
+  color: var(--${(props) => (props.value ? 'ruber' : 'honey')});
 `

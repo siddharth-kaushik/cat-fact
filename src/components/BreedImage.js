@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import styled from "styled-components/macro"
+import React, { useState } from 'react'
+import styled from 'styled-components'
 
 function BreedImage({ name }) {
   const [loaded, setLoaded] = useState(false)

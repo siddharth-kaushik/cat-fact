@@ -1,5 +1,5 @@
-import styled from "styled-components/macro"
-import { Heading, Text } from "../base"
+import styled from 'styled-components'
+import { Heading, Text } from '../base'
 
 export const Wrapper = styled.div`
   display: flex;

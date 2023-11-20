@@ -1,12 +1,12 @@
-import React from "react"
-import styled from "styled-components/macro"
+import React from 'react'
+import styled from 'styled-components'
 
-import { Heading, Picture, SearchInput } from "./base"
-import { useCatState, useCatDispatch } from "../context"
+import { Heading, Picture, SearchInput } from './base'
+import { useCatState, useCatDispatch } from '../context'
 
-import avifSrc from "../images/search.avif"
-import webpSrc from "../images/search.webp"
-import fallbackSrc from "../images/search.png"
+import avifSrc from '../images/search.avif'
+import webpSrc from '../images/search.webp'
+import fallbackSrc from '../images/search.png'
 
 function SearchBar() {
   const dispatch = useCatDispatch()
@@ -14,7 +14,7 @@ function SearchBar() {
   const stat = `you are Meowing ${filtered.length} / ${breeds.length} whiskers`
 
   const handleChange = () => (v) => {
-    dispatch({ type: "search", payload: v })
+    dispatch({ type: 'search', payload: v })
   }
 
   return (

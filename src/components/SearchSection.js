@@ -1,13 +1,13 @@
-import styled from "styled-components/macro"
+import styled from 'styled-components'
 
-import avifSrc from "../images/super.avif"
-import webpSrc from "../images/super.webp"
-import fallbackSrc from "../images/super.png"
+import avifSrc from '../images/super.avif'
+import webpSrc from '../images/super.webp'
+import fallbackSrc from '../images/super.png'
 
-import { Heading, Picture } from "./base"
-import SearchBar from "./SearchBar"
+import { Heading, Picture } from './base'
+import SearchBar from './SearchBar'
 
-const title = "It ain’t easy being purr-fect."
+const title = 'It ain’t easy being purr-fect.'
 
 function SearchSection() {
   return (
@@ -50,5 +50,5 @@ const SuperCatPicture = styled(Picture)`
   position: absolute;
   top: 0;
   right: 0;
-  transform: translate(-8%,-100%);
+  transform: translate(-8%, -100%);
 `

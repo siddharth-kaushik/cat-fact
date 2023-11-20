@@ -1,5 +1,5 @@
-import React from "react"
-import styled from "styled-components/macro"
+import React from 'react'
+import styled from 'styled-components'
 
 function ToggleButton({ defaultIcon, activeIcon, value, onClick, ...rest }) {
   const iconMarkup = value ? activeIcon : defaultIcon
@@ -26,13 +26,15 @@ const StyledButton = styled.button`
 
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     background-color: currentColor;
     border-radius: 6px;
     opacity: 0;
-    transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    transition:
+      opacity 0.15s ease-in-out,
+      background-color 0.15s ease-in-out;
   }
 
   &:hover::before {

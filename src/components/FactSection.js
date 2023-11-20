@@ -1,11 +1,11 @@
-import styled from "styled-components/macro"
+import styled from 'styled-components'
 
-import avifSrc from "../images/tip.avif"
-import webpSrc from "../images/tip.webp"
-import fallbackSrc from "../images/tip.png"
+import avifSrc from '../images/tip.avif'
+import webpSrc from '../images/tip.webp'
+import fallbackSrc from '../images/tip.png'
 
-import { Heading, Picture } from "./base"
-import Fact from "./Fact"
+import { Heading, Picture } from './base'
+import Fact from './Fact'
 
 function FactSection() {
   return (
