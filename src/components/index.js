@@ -1,6 +1,10 @@
 import Logo from "./Logo"
 import Breeds from "./Breeds"
-import Fact from "./Fact"
-import SearchBar from "./SearchBar"
+import FactSection from "./FactSection"
+import SearchSection from "./SearchSection"
+import Header from "./Header"
+import Footer from "./Footer"
 
-export { Logo, Breeds, Fact, SearchBar }
+export { Logo, Breeds, FactSection, SearchSection, Header, Footer }
+export * from "./base"
+export * from "./status"
